@@ -8,6 +8,7 @@ let _div5 = document.getElementById('_div5')
 let _div6 = document.getElementById('_div6')
 let _div7 = document.getElementById('_div7')
 let _menu = document.getElementById('_menu')
+let _div = document.querySelectorAll('._div')
 let flag1 = 0
 let _sumMenu = document.getElementById('_sumMenu')
 let _txt = 'JUST SCROLL DOWN...'
@@ -32,17 +33,27 @@ function myText() {
 
 //submenu
 function myMenu() {
-    if (flag1 == 0) {
-        _div1.style.position = 'absolute'
-        _div2.style.display = 'none'
+    if (flag1 == 0) {  
+        _div.forEach((element, i) => {
+            if (i == 0) {
+                element.style.position = 'fixed'
+            }else{
+                element.style.display = 'none'
+            }
+        })
         _div1.style.width = '90%'
         _div1.style.height = '90vh'
         _menu.style.width = '90%'
         _sumMenu.style.opacity = '1'
         flag1 = 1
     } else {
-        _div2.style.display = 'block'
-        _div1.style.position = 'relative'
+        _div.forEach((element, i) => {
+            if (i == 0) {
+                element.style.position = 'relative'
+            }else{
+                element.style.display = 'block'
+            }
+        })  
         _div1.style.width = '100%'
         _div1.style.height = '100vh'
         _menu.style.width = '100%'
@@ -53,11 +64,11 @@ function myMenu() {
 
 //setting padding based on Salient 
 function myResize() {
-     _paddingLeft = _menu.children[0].clientWidth
+    _paddingLeft = _menu.children[0].clientWidth
     _div2.children[0].style.paddingLeft = _paddingLeft + 50 + 'px'
     _div3.style.paddingLeft = _paddingLeft + 50 + 'px'
     _div7.style.paddingLeft = _paddingLeft + 50 + 'px'
-    _div4.style.paddingLeft = _paddingLeft + 50 + 'px' 
+    _div4.style.paddingLeft = _paddingLeft + 50 + 'px'
     if (window.innerWidth <= 922) {
         _div7.style.paddingRight = _paddingLeft + 50 + 'px'
         _div4.style.paddingRight = _paddingLeft + 50 + 'px'
@@ -110,43 +121,44 @@ window.addEventListener('scroll', () => {
         })
     }
     //part4   
-    if(window.innerWidth >= 922){        
-        if(_scrollY+400 >= _offsetTop6){    
-            _div7.style.justifyContent = 'end'             
+    if (window.innerWidth >= 922) {
+        if (_scrollY + 400 >= _offsetTop6) {
+            _div7.style.justifyContent = 'end'
             _div7.children[0].style.position = 'fixed'
-            _div7.children[0].style.top = '0'  
-             _div7.children[0].style.left = _paddingLeft+50+ 'px'  
-         }else{
-             _div7.children[0].style.position = 'relative'  
-             _div7.style.justifyContent = 'space-between'   
-             _div7.children[0].style.left = 0          
-                 
-         }        
-    }else{
-        
-        _div7.children[0].style.position = 'relative' 
-        _div7.children[0].style.left = _paddingLeft+50 + 'px'
+            _div7.children[0].style.top = '0'
+            _div7.children[0].style.left = _paddingLeft + 50 + 'px'
+        } else {
+            _div7.children[0].style.position = 'relative'
+            _div7.style.justifyContent = 'space-between'
+            _div7.children[0].style.left = 0
+
+        }
+    } else {
+
+        _div7.children[0].style.position = 'relative'
+        _div7.children[0].style.left = _paddingLeft + 50 + 'px'
         _div7.style.justifyContent = 'space-between'
-        _div7.children[0].style.left = 0         
+        _div7.children[0].style.left = 0
     }
 
 })
 
+//mouse move
 
-
-_div3.addEventListener('mousemove',(e)=>{  
+_div3.addEventListener('mousemove', (e) => {
     _div3.children[0].children[0].style.display = 'flex'
     _div3.style.cursor = 'pointer'
-   x =  e.clientX
-   y =  e.clientY
-   _div3.children[0].children[0].style.top = y + 'px'
-   _div3.children[0].children[0].style.left = x + 'px'
+    x = e.clientX
+    y = e.clientY
+    _div3.children[0].children[0].style.top = y + 'px'
+    _div3.children[0].children[0].style.left = x + 'px'
 })
 
-   _div3.addEventListener('mouseleave',(e)=>{
-  
+_div3.addEventListener('mouseleave', (e) => {
+
     _div3.children[0].children[0].style.display = 'none'
-    _div3.style.cursor = 'auto'})
+    _div3.style.cursor = 'auto'
+})
 
 //drag on _div3
 function myMove(e) {
