@@ -132,30 +132,21 @@ window.addEventListener('scroll', () => {
 
 })
 
-//mouse move on #_div3
-//bug******
-// _div3.children[0].addEventListener('mousemove',(e)=>{         
-//     _div3.children[0].children[0].style.display = 'flex'
-//     _div3.style.cursor = 'pointer'   
-//    x =  e.clientX
-//    y =  e.clientY
-//    _div3.children[0].children[0].style.top = y + 'px'
-//    _div3.children[0].children[0].style.left = x + 'px' 
-//    e.stopImmediatePropagation()      
-// })
 
-//   _div3.children[0].addEventListener('mouseleave',(e)=>{
-//     e.stopImmediatePropagation()
-//     _div3.children[0].children[0].style.display = 'none'
-//     _div3.style.cursor = 'auto'       
-//   })
 
-//drag on #_div3
-// _div3.children[0].addEventListener('mousemove',(e)=>{
-//     x1 = e.clientX
-//     _transformX = (x1 - x2)
-//     x2 = x1    
-// }) 
+_div3.addEventListener('mousemove',(e)=>{  
+    _div3.children[0].children[0].style.display = 'flex'
+    _div3.style.cursor = 'pointer'
+   x =  e.clientX
+   y =  e.clientY
+   _div3.children[0].children[0].style.top = y + 'px'
+   _div3.children[0].children[0].style.left = x + 'px'
+})
+
+   _div3.addEventListener('mouseleave',(e)=>{
+  
+    _div3.children[0].children[0].style.display = 'none'
+    _div3.style.cursor = 'auto'})
 
 //drag on _div3
 function myMove(e) {
