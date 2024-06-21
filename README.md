@@ -6,7 +6,7 @@
 ![architect 3](https://github.com/niloufar-yousefi/Rethink-architecture-site/assets/156951582/c621a21e-2224-423f-bfea-595a320f95f2)
 
 
-- [Demo Project](https://niloufar-yousefi.github.io/ToDoList/)
+- [Demo Project](https://niloufar-yousefi.github.io/Rethink-architecture-site/)
 
 - Developed by Niloofar Yoosefi
 
