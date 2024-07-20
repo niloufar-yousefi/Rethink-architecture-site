@@ -51,7 +51,7 @@ function myMenu() {
             if (i == 0) {
                 element.style.position = 'relative'
             }else{
-                element.style.display = 'block'
+                element.style.display = 'flex'
             }
         })  
         _div1.style.width = '100%'
