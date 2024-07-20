@@ -100,7 +100,6 @@ main {
         overflow: hidden;
         transition: all 1s linear;
         left: 0;
-
         >#_menu {
             transition: all 1s linear;
             width: 100%;
@@ -111,7 +110,7 @@ main {
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            z-index: 3;
+            z-index: 999;
 
             >p {
                 width: 10%;
